@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   data_srv:
-#    image: aracati2017 # Specify your image name and tag here
+    image: aracati2017 # Specify your image name and tag here
     build:
       context: ./
       dockerfile: ./aracati2017.DockerFile # Use the actual name of your Dockerfile
