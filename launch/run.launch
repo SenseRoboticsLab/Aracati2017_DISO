@@ -5,7 +5,7 @@
 
   <param name="use_sim_time" value="true" />
 
-  <node pkg="direct_sonar_odometry" type="repub_gt" name="repub_gt_node"/>
+<!--  <node pkg="direct_sonar_odometry" type="repub_gt" name="repub_gt_node"/>-->
 
   <node pkg="aracati2017" name="odom" type="odom"
         respawn="false" output="screen">
@@ -31,7 +31,7 @@
 
   <node pkg="rosbag" name="rosbag_play" type="play"
         respawn="false" output="screen"
-        args="$(arg bag_file) --clock --pause -r 0.8 -s 30 -q">
+        args="$(arg bag_file) --clock -r 0.8 -s 30 -q">
   </node>
 
 </launch>

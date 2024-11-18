@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  data_srv:
+#    image: aracati2017 # Specify your image name and tag here
+    build:
+      context: ./
+      dockerfile: ./aracati2017.DockerFile # Use the actual name of your Dockerfile
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ~/.ssh:/home/da/.ssh
+      - ../bags:/home/da/diso_ws/src/Aracati2017_DISO/bags
+    environment:
+      - DISPLAY=$DISPLAY
+      - XAUTHORITY=$XAUTHORITY
+      - NVIDIA_DRIVER_CAPABILITIES=all
+      # ports:
+      # - "2222:22"
+    network_mode: host
+    stdin_open: true
+    tty: true
+    command: bash -i -c "source /home/da/diso_ws/devel/setup.bash && roslaunch aracati2017 run.launch"
+
