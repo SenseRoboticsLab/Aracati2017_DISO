@@ -1,6 +1,6 @@
 <launch>
 
-  <arg name="bag_file" default="$(find aracati2017)/bags/s1.bag"/>
+  <arg name="bag_file" default="$(find aracati2017)/bags/ARACATI_2017_8bits_full.bag"/>
   <arg name="image_path" default="$(find aracati2017)/maps/2021-12.yaml"/>
 
   <param name="use_sim_time" value="true" />
