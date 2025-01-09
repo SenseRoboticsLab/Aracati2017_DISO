@@ -42,12 +42,12 @@ RUN echo "da ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 USER da
 WORKDIR /home/da/diso_ws/src
-#RUN git clone https://github.com/SenseRoboticsLab/Aracati2017_DISO.git
-#WORKDIR /home/da/diso_ws
-#RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && rosdep update && rosdep install --from-paths src --ignore-src -r -y"
-#RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && catkin_make"
+RUN git clone https://github.com/SenseRoboticsLab/Aracati2017_DISO.git
+WORKDIR /home/da/diso_ws
+RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && rosdep update && rosdep install --from-paths src --ignore-src -r -y"
+RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && catkin_make"
 ##
-#RUN echo "source /opt/ros/noetic/setup.bash" >> /home/da/.bashrc
-#RUN echo "source /home/da/diso_ws/devel/setup.bash" >> /home/da/.bashrc
+RUN echo "source /opt/ros/noetic/setup.bash" >> /home/da/.bashrc
+RUN echo "source /home/da/diso_ws/devel/setup.bash" >> /home/da/.bashrc
 
 CMD ["/bin/bash"]
