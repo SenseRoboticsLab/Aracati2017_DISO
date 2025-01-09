@@ -31,7 +31,7 @@
 
   <node pkg="rosbag" name="rosbag_play" type="play"
         respawn="false" output="screen"
-        args="$(arg bag_file) --clock -r 0.8 -s 30 -q">
+        args="$(arg bag_file) --clock -r 0.8 -s 60 -q">
   </node>
 
 </launch>
